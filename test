@@ -1,0 +1,795 @@
+menuConfigs = {
+    ['menu'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+            sizePx = 590,
+                slices = {
+				    equal = { ['fill'] = Config.spcolor, ['stroke'] = Config.spcolor, ['stroke-width'] = 0, ['opacity'] = 1 },
+                    default = { ['fill'] = Config.MainFill, ['stroke'] = Config.MainStroke, ['stroke-width'] = 1, ['opacity'] = 0.2  },
+                    hover = { ['fill'] = Config.MainFill, ['stroke'] = Config.MainStroke, ['stroke-width'] = 1, ['opacity'] = 0.6 },
+                    selected = { ['fill'] = Config.MainFill, ['stroke'] = Config.MainStroke, ['stroke-width'] = 1, ['opacity'] = 0.6 }
+                },
+                titles = { 
+                    default = { ['fill'] = '#F6C186', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#F6C186', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#F6C186', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+                    Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.36 ,
+                    maxRadiusPercent = 0.87 ,
+                    labels = {"imgsrc:policemenu.png", "imgsrc:gangmenu.png", "imgsrc:citizenmenu.png", "imgsrc:adminmenu.png", "imgsrc:closepsmenu.png"},
+                    commands = {"policemenu", "gangmenu", "citizenmenu", "adminmenu", "eventmenu"}
+			   }
+            }
+        }
+    },
+    ['Vrp'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.vrpg,
+            style = {
+                sizePx = 950,
+                slices = {
+                    default = { ['fill'] = Config.VrpFill, ['stroke'] = Config.VrpStroke, ['stroke-width'] = 110, ['opacity'] = 2.9 },
+                    hover = { ['fill'] = Config.VrpStroke, ['stroke'] = Config.VrpStroke, ['stroke-width'] = 110, ['opacity'] = 2.9 },
+					equal = { ['fill'] = Config.Vrpsp, ['stroke'] = Config.Vrpsp, ['stroke-width'] = 110, ['opacity'] = 2.9 },
+                    selected = { ['fill'] = Config.VrpStroke, ['stroke'] = Config.VrpStroke, ['stroke-width'] = 110, ['opacity'] = 2.9 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 94,
+                    height = 130.55
+                }
+            },
+            wheels = {                        
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 3.0,
+                    spreaderOutPercent = 3.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.4,
+                    maxRadiusPercent = 0.75,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:openinventory.png", "imgsrc:givemoney.png", "imgsrc:banktransfer.png", "imgsrc:fixvehicle.png", "imgsrc:Google.png", "imgsrc:rentbike.png", "imgsrc:clearbag.png", "imgsrc:commandvrp1.png"},
+                    commands = {"closepsmenu", "openinventory", "givemoney", "banktransfer", "fixcar", "Google", "rentbike", "clearinventory", "commandvrp1"}
+                }
+            }
+        }
+    },
+    ['admin'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.adming,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.AdminFill, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.adminsp, ['stroke'] = Config.adminsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 105,
+                    height = 139
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6,0,
+                    spreaderOutPercent = 6,0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:adminblips.png", "imgsrc:adminspawncar.png", "imgsrc:adminaddgroup.png", "imgsrc:adminbanplayer.png", "imgsrc:adminunbanplayer.png", "imgsrc:adminkickplayer.png", "imgsrc:adminnoclip.png", "imgsrc:admineat.png", "imgsrc:adminnearbyrevive.png", "imgsrc:offlinemenu.png",},
+                    commands = {"closepsmenu", "blipsonmap", "spawnvehicle", "groups", "banplayer", "unbanplayer", "kickplayer", "noclip", "getfood", "revivenearby", "reviveall", "offlinemenu"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.35,
+                    maxRadiusPercent = 0.60,
+                    labels = {"imgsrc:reviveplayer.png", "imgsrc:tptome.png", "imgsrc:gotoplayer.png", "imgsrc:gotowaypoint.png"},
+                    commands = {"reviveplayer", "tptome", "gotoplayer", "gotowaypoint"}
+                }
+            }
+        }
+    },
+    ['gang'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.gangg,
+            style = {
+                sizePx = 990,
+                slices = {
+				    equal = { ['fill'] = Config.gangsp, ['stroke'] = Config.gangsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    hover = { ['fill'] = Config.GangStroke, ['stroke'] = Config.GangStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					default = { ['fill'] = Config.GangFill, ['stroke'] = Config.GangStroke, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.GangStroke, ['stroke'] = Config.GangStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:checkinventory.png" , "imgsrc:carcheck.png", "imgsrc:cuffplayer.png", "imgsrc:dragplayer.png", "imgsrc:getoutofcar.png", "imgsrc:getincar.png", "imgsrc:storeweapons.png"},
+                    commands = {"closepsmenu", "checkinventory", "checkvehicleinv", "gangcuff", "ganghold", "gangoutofcar", "gangputincar", "gangstoreguns"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.3,
+                    maxRadiusPercent = 0.60,
+                    labels = {"imgsrc:takehostage.png", "imgsrc:lootplayer.png", "imgsrc:gangpicklock.png", "imgsrc:commandgang1.png"},
+                    commands = {"takehostage", "gangloot", "gangpicklock", "commandgang1"}
+                }
+            }
+        }
+    },
+    ['event'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.eventg,
+            style = {
+                sizePx = 990,
+                slices = {
+				    equal = { ['fill'] = Config.eventsp, ['stroke'] = Config.eventsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    hover = { ['fill'] = Config.EventStroke, ['stroke'] = Config.EventStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					default = { ['fill'] = Config.EventFill, ['stroke'] = Config.EventStroke, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.EventStroke, ['stroke'] = Config.EventStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                        spreaderInPercent = 6.0,
+                        spreaderOutPercent = 6.0,
+                        Deirado = Config.Logo,
+                        Deirador = Config.Logo,
+                        navAngle = 270,
+                        minRadiusPercent = 0.6,
+                        maxRadiusPercent = 0.9,
+                        labels = {"imgsrc:https://i.imgur.com/MacG7W8.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811571383808032808/98087e7160bb1000.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811572102406078464/moneyy.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811571777062830090/90c738419cb0e95c.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811571697147707412/cf8a1e528c827c69.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/805053247533744168/eat.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825054561231437844/b1997434e2c35760.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/840688468018462790/2f6fc0d9318ad1bf.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811572530350522418/freze.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825053851089895464/9aaed9836eeab09f.png",  "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825053715803275305/ab052bb14c440595.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/804872335315304448/message.png"},
+                        commands = {"closepsmenu", "giveitemevents", "givemoneyevents", "earmor5", "erevive5", "fooddrinkr", "nklla3b", "zoness", "efreez5", "RemoveallVehicle", "eweapon5", "emeesage5"}
+                    },
+                {
+                        spreaderInPercent = 6.0,
+                        spreaderOutPercent = 6.0,
+                        Deirado = Config.Logo,
+                        Deirador = Config.Logo,
+                        navAngle = 270,
+                        minRadiusPercent = 0.35,
+                        maxRadiusPercent = 0.60,
+                        labels = {"imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825054068422475857/e1ed6adefa7605d1.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811573558874210354/65b6867e5fb178cd.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825053491247710238/fd7cd1488dd68e59.png"},
+                        commands = {"weaponssnearr","heaLNEAR", "timerr"}
+                }
+            }
+        }
+    },
+    ['police'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.policeg,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.PoliceFill, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.PoliceStroke, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.PoliceSp, ['stroke'] = Config.PoliceSp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.PoliceStroke, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+                    Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 150,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:checkinventory.png", "imgsrc:policeid.png", "imgsrc:cuffplayer.png", "imgsrc:dragplayer.png", "imgsrc:policemenu.png", "imgsrc:carcheck.png", "imgsrc:fineplayer.png", "imgsrc:policejail.png", "imgsrc:getoutofcar.png", "imgsrc:getincar.png", "imgsrc:promoanddemo.png" },
+                    commands = {"closepsmenu", "policecheckinv", "policeaskid", "policecuff", "policehold", "policemenu", "policecheckcar", "policefine", "policejail", "policeoutofcar", "policeputincar", "promoanddemo"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.36,
+                    maxRadiusPercent = 0.60,
+                    labels = {"imgsrc:carryplayer.png", "imgsrc:policeselfheal.png", "imgsrc:policecitizenrevive.png"},
+                    commands = {"carry", "policehealself", "policerevcitizen"}
+                }
+            }
+        }
+    },
+}
+	
+	
+-- Submenu configuration
+subMenuConfigs = {
+    ['policemenu'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.PoliceFill, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.PoliceStroke, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.PoliceSp, ['stroke'] = Config.PoliceSp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.PoliceStroke, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+                    Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:checkinventory.png", "imgsrc:policeid.png", "imgsrc:cuffplayer.png", "imgsrc:dragplayer.png", "imgsrc:policemenu.png", "imgsrc:carcheck.png", "imgsrc:fineplayer.png", "imgsrc:policejail.png", "imgsrc:getoutofcar.png", "imgsrc:getincar.png", "imgsrc:promoanddemo.png" },
+                    commands = {"closepsmenu", "policecheckinv", "policeaskid", "policecuff", "policehold", "policemenu", "policecheckcar", "policefine", "policejail", "policeoutofcar", "policeputincar", "promoanddemo"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.3,
+                    maxRadiusPercent = 0.60,
+                    labels = {"imgsrc:carryplayer.png", "imgsrc:policeselfheal.png", "imgsrc:policecitizenrevive.png"},
+                    commands = {"carry", "policehealself", "policerevcitizen"}
+                }
+            }
+        }
+    },
+    ['promoanddemo'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.PoliceFill, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.PoliceStroke, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.PoliceSp, ['stroke'] = Config.PoliceSp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.PoliceStroke, ['stroke'] = Config.PoliceStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 30, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+                    Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:checkinventory.png", "imgsrc:policeid.png", "imgsrc:cuffplayer.png", "imgsrc:dragplayer.png", "imgsrc:policemenu.png", "imgsrc:carcheck.png", "imgsrc:fineplayer.png", "imgsrc:policejail.png", "imgsrc:getoutofcar.png", "imgsrc:getincar.png", "imgsrc:promoanddemo.png" },
+                    commands = {"closepsmenu", "policecheckinv", "policeaskid", "policecuff", "policehold", "policemenu", "policecheckcar", "policefine", "policejail", "policeoutofcar", "policeputincar", "promoanddemo"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.3,
+                    maxRadiusPercent = 0.60,
+                    labels = {"أنزال رتبة", "رفع رتبة"},
+                    commands = {"policepromote", "policedemote"}
+                }
+            }
+        }
+    },
+    ['eventmenu'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.EventFill, ['stroke'] = Config.EventStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.EventStroke, ['stroke'] = Config.EventStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.eventsp, ['stroke'] = Config.eventsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.EventStroke, ['stroke'] = Config.EventStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {  
+                    Deirado = Config.Logo,
+                    Deirador = Config.Logo,
+                    navAngle = 270,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:https://i.imgur.com/MacG7W8.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811571383808032808/98087e7160bb1000.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811572102406078464/moneyy.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811571777062830090/90c738419cb0e95c.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811571697147707412/cf8a1e528c827c69.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/805053247533744168/eat.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825054561231437844/b1997434e2c35760.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/840688468018462790/2f6fc0d9318ad1bf.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811572530350522418/freze.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825053851089895464/9aaed9836eeab09f.png",  "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825053715803275305/ab052bb14c440595.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/804872335315304448/message.png"},
+                    commands = {"closepsmenu", "giveitemevents", "givemoneyevents", "earmor5", "erevive5", "fooddrinkr", "nklla3b", "zoness", "efreez5", "RemoveallVehicle", "eweapon5", "emeesage5"}
+                },
+                { 
+                    Deirado = Config.Logo,
+                    Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.35,
+                    maxRadiusPercent = 0.6,
+                    labels = {"imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825054068422475857/e1ed6adefa7605d1.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/811573558874210354/65b6867e5fb178cd.png", "imgsrc:https://cdn.discordapp.com/attachments/800422492988637195/825053491247710238/fd7cd1488dd68e59.png"},
+                   commands = {"weaponssnearr","heaLNEAR", "timerr"}
+                }
+            }
+        }
+    },
+    ['gangmenu'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 990,
+                slices = {
+				    equal = { ['fill'] = Config.gangsp, ['stroke'] = Config.gangsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    hover = { ['fill'] = Config.GangStroke, ['stroke'] = Config.GangStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					default = { ['fill'] = Config.GangFill, ['stroke'] = Config.GangStroke, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.GangStroke, ['stroke'] = Config.GangStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:checkinventory.png" , "imgsrc:carcheck.png", "imgsrc:cuffplayer.png", "imgsrc:dragplayer.png", "imgsrc:getoutofcar.png", "imgsrc:getincar.png", "imgsrc:storeweapons.png"},
+                    commands = {"closepsmenu", "checkinventory", "checkvehicleinv", "gangcuff", "ganghold", "gangoutofcar", "gangputincar", "gangstoreguns"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.3,
+                    maxRadiusPercent = 0.60,
+                    labels = {"imgsrc:takehostage.png", "imgsrc:lootplayer.png", "imgsrc:gangpicklock.png", "imgsrc:commandgang1.png"},
+                    commands = {"takehostage", "gangloot", "gangpicklock", "commandgang1"}
+                }
+            }
+        }
+    },
+    ['citizenmenu'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 890,
+                slices = {
+                    default = { ['fill'] = '#000000 ', ['stroke'] = '#ff8000 ', ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = '#ff8000 ', ['stroke'] = '#000000', ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					logo = { ['fill'] = '#ff8000', ['stroke'] = '#ff8000', ['stroke-width'] = 0, ['opacity'] = 0.80 },
+					equal = { ['fill'] = '#ff8000', ['stroke'] = '#ff8000', ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = '#ff8000 ', ['stroke'] = '#000000', ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {                        
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.4,
+                    maxRadiusPercent = 0.75,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:openinventory.png", "imgsrc:givemoney.png", "imgsrc:banktransfer.png", "imgsrc:fixvehicle.png", "imgsrc:Google.png", "imgsrc:rentbike.png", "imgsrc:clearbag.png", "imgsrc:commandvrp1.png"},
+                    commands = {"closepsmenu", "openinventory", "givemoney", "banktransfer", "fixcar", "Google", "rentbike", "clearinventory", "commandvrp1"}
+                }
+            }
+        }
+    },
+    ['adminmenu'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.AdminFill, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.adminsp, ['stroke'] = Config.adminsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:adminblips.png", "imgsrc:adminspawncar.png", "imgsrc:groupsmenu.png", "imgsrc:adminbanplayer.png", "imgsrc:adminunbanplayer.png", "imgsrc:adminkickplayer.png", "imgsrc:adminnoclip.png", "imgsrc:admineat.png", "imgsrc:adminnearbyrevive.png", "imgsrc:offlinemenu.png",},
+                    commands = {"closepsmenu", "blipsonmap", "spawnvehicle", "groups", "banplayer", "unbanplayer", "kickplayer", "noclip", "getfood", "revivenearby", "reviveall", "offlinemenu", "whitelist1"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.35,
+                    maxRadiusPercent = 0.6,
+                    labels = {"imgsrc:reviveplayer.png", "imgsrc:tptome.png", "imgsrc:gotoplayer.png", "imgsrc:gotowaypoint.png"},
+                    commands = {"reviveplayer", "tptome", "gotoplayer", "gotowaypoint"}
+                }
+            }
+        }
+    },
+    ['whitelist1'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.AdminFill, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.adminsp, ['stroke'] = Config.adminsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:adminblips.png", "imgsrc:adminspawncar.png", "imgsrc:groupsmenu.png", "imgsrc:adminbanplayer.png", "imgsrc:adminunbanplayer.png", "imgsrc:adminkickplayer.png", "imgsrc:adminnoclip.png", "imgsrc:admineat.png", "imgsrc:adminnearbyrevive.png", "imgsrc:offlinemenu.png",},
+                    commands = {"closepsmenu", "blipsonmap", "spawnvehicle", "groups", "banplayer", "unbanplayer", "kickplayer", "noclip", "getfood", "revivenearby", "reviveall", "offlinemenu"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.35,
+                    maxRadiusPercent = 0.6,
+                    labels = {"imgsrc:whitelist.png", "imgsrc:unwhitelist.png"},
+                    commands = {"whitelist", "unwhitelist"}
+                }
+            }
+        }
+    },
+    ['groups'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.AdminFill, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.adminsp, ['stroke'] = Config.adminsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:adminblips.png", "imgsrc:adminspawncar.png", "imgsrc:groupsmenu.png", "imgsrc:adminbanplayer.png", "imgsrc:adminunbanplayer.png", "imgsrc:adminkickplayer.png", "imgsrc:adminnoclip.png", "imgsrc:admineat.png", "imgsrc:adminnearbyrevive.png", "imgsrc:offlinemenu.png",},
+                    commands = {"closepsmenu", "blipsonmap", "spawnvehicle", "groups", "banplayer", "unbanplayer", "kickplayer", "noclip", "getfood", "revivenearby", "reviveall", "offlinemenu"}
+                },
+                {
+					Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.35,
+                    maxRadiusPercent = 0.60,				
+                    labels = {"imgsrc:adminaddgroup.png", "imgsrc:removegroup.png"},
+                    commands = {"addgroup","removegroup"}
+                }
+            }
+        }
+    },
+    ['offlinemenu'] = {
+        enableMenu = function()                     -- Function to enable/disable menu handling
+            local player = GetPlayerPed(-1)
+            return not IsPedCuffed(player)
+        end,
+        data = {
+            keybind = Config.mkey,
+            style = {
+                sizePx = 990,
+                slices = {
+                    default = { ['fill'] = Config.AdminFill, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					equal = { ['fill'] = Config.adminsp, ['stroke'] = Config.adminsp, ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = Config.AdminStroke, ['stroke'] = Config.AdminStroke, ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {                        
+                {
+					Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    navAngle = 270,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    minRadiusPercent = 0.6,
+                    maxRadiusPercent = 0.9,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:adminblips.png", "imgsrc:adminspawncar.png", "imgsrc:groupsmenu.png", "imgsrc:adminbanplayer.png", "imgsrc:adminunbanplayer.png", "imgsrc:adminkickplayer.png", "imgsrc:adminnoclip.png", "imgsrc:admineat.png", "imgsrc:adminnearbyrevive.png", "imgsrc:offlinemenu.png",},
+                    commands = {"closepsmenu", "blipsonmap", "spawnvehicle", "groups", "banplayer", "unbanplayer", "kickplayer", "noclip", "getfood", "revivenearby", "reviveall", "offlinemenu"}
+                },
+                {
+					Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.35,
+                    maxRadiusPercent = 0.60,				
+					labels = {"imgsrc:offlinejail.png", "imgsrc:offlinegroup.png", "imgsrc:offlineremovegroup.png","imgsrc:offlinechangeid.png", "imgsrc:offlinegivemoney.png","imgsrc:offlinegiveitem.png","imgsrc:offlineban.png",},
+                    commands = {"offjail","offgroup", "offregroup","changeid","givemoneyevent","offitem","offlineban"}
+                }
+            }
+        }
+    },
+    ['Google'] = {
+        data = {
+            keybind = "F1",
+            style = {
+                sizePx = 890,
+                slices = {
+                    default = { ['fill'] = '#000000 ', ['stroke'] = '#ff8000 ', ['stroke-width'] = 3, ['opacity'] = 0.8 },
+                    hover = { ['fill'] = '#ff8000 ', ['stroke'] = '#000000', ['stroke-width'] = 3, ['opacity'] = 0.8 },
+					logo = { ['fill'] = '#000000', ['stroke'] = '#000000', ['stroke-width'] = 0, ['opacity'] = 0.80 },
+					equal = { ['fill'] = '#ff8000', ['stroke'] = '#ff8000', ['stroke-width'] = 3, ['opacity'] = 0.80 },
+                    selected = { ['fill'] = '#ff8000 ', ['stroke'] = '#000000', ['stroke-width'] = 3, ['opacity'] = 0.8 }
+                },
+                titles = {                          -- Text style settings
+                    default = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    hover = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' },
+                    selected = { ['fill'] = '#ffffff', ['stroke'] = 'none', ['font'] = 'Helvetica', ['font-size'] = 16, ['font-weight'] = 'bold' }
+                },
+                icons = {
+                    width = 110,
+                    height = 144
+                }
+            },
+            wheels = {
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.4,
+                    maxRadiusPercent = 0.75,
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 6.0,
+                    spreaderOutPercent = 6.0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.4,
+                    maxRadiusPercent = 0.75,
+                    labels = {"imgsrc:closepsmenu.png", "imgsrc:openinventory.png", "imgsrc:givemoney.png", "imgsrc:banktransfer.png", "imgsrc:fixvehicle.png", "imgsrc:Google.png", "imgsrc:rentbike.png", "imgsrc:clearbag.png", "imgsrc:commandvrp1.png"},
+                    commands = {"closepsmenu", "openinventory", "givemoney", "banktransfer", "fixcar", "Google", "rentbike", "clearinventory", "commandvrp1"}
+                },
+                {
+                    Deirado = Config.Logo,
+					Deirador = Config.Logo,
+                    spreaderInPercent = 0,
+                    spreaderOutPercent = 0,
+                    navAngle = 270,
+                    minRadiusPercent = 0.75,
+                    maxRadiusPercent = 1,
+                    labels = {"imgsrc:malakya.png", "imgsrc:policehq.png", "imgsrc:hospitalhq.png", "imgsrc:spawnhq.png", "imgsrc:scaryhq.png", "imgsrc:option1.png", "imgsrc:option2.png"},
+                    commands = {"gpsmlkya", "gpsmrkz", "gpshospital", "gpsspawn", "gpsmhjorh", "Abo3f6hgps1", "Abo3f6hgps2"}
+                }
+            }
+        }
+    },
+}
